@@ -1,10 +1,37 @@
-const nameEle = document.querySelector('#form-section input[name="name"]');
-const surnameEle = document.querySelector('#form-section input[name="last-name"]');
-const kmDaFareEle = document.querySelector('#form-section input[name="km-da-percorrere"]');
-const etaEle = document.querySelector('#form-section select[name="eta"]');
-const formBtnEle = document.querySelector('#form-section select[type="button"]');
+const PREZZZO_PER_KM = 0.21;
 
-console.log(nameEle, surnameEle, kmDaFareEle, etaEle, formBtnEle);
+// calcola il prezzo del biglietto al click
 
+const formBtnEle = document.getElementById('form-btn');
+console.log(formBtnEle); // non è un numero
 
-let 
+const distanzaEle = document.getElementById('distanza');
+const selectEle = document.getElementById('sconto');
+console.log(selectEle);
+
+formBtnEle.addEventListener('click', function(){
+    console.log('al click');
+
+    let km = distanzaEle.value;
+    let kmNumber = parseFloat(km);
+    console.log(kmNumber);
+    let prezzoBase = km * PREZZZO_PER_KM;
+
+    console.log('prezzo base: ' + prezzoBase);
+    
+    let sconto = 0;
+    const scontoSelezionato = selectEle.value;
+    console.log(scontoSelezionato);
+
+    if(scontoSelezionato === 'caso-1'){
+        sconto = prezzoBase * 0.2;
+
+    }else if(scontoSelezionato === 'caso-2'){
+        sconto = prezzoBase * 0.4;
+    }
+
+    const prezzoFinale = prezzoBase - sconto;
+
+    console.log(prezzoBase, sconto, prezzoFinale);
+
+})

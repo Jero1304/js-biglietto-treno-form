@@ -18,16 +18,16 @@
             <h1>Calcola il prezzo del biglietto</h1>
             <div class="row">
                 <div id="form-section" class="col">
-                    <input type="text" name="name" class="form-control mb-2" value="" placeholder="Nome">
-                    <input type="text" name="last-name" class="form-control mb-2" value="" placeholder="Cognome">
-                    <input type="number" name="km-da-percorrere" class="form-control mb-2" value="" placeholder="km da percorrere">
-                    <select name="eta" class="form-control mb-2" id="">
-                        <option value="1">Minorenne (0-17)</option>
-                        <option value="2">Maggiorenne(18-64)</option>
-                        <option value="3">Anziano(65>)</option>
+                    <input id="first-name" type="text" name="name" class="form-control mb-2" value="" placeholder="Nome">
+                    <input id="last-name" type="text" name="last-name" class="form-control mb-2" value="" placeholder="Cognome">
+                    <input id="distanza" type="number" name="distanza" class="form-control mb-2" value="" placeholder="km da percorrere">
+                    <select id="sconto" name="sconto" class="form-control mb-2">
+                        <option value="">-- seleziona sconto --</option>
+                        <option value="caso-1">Minorenne (0-17)</option>
+                        <option value="caso-2">Anziano(65>)</option>
                     </select>
 
-                    <input type="button" class="btn btn-secondary" value="Genera">
+                    <input id="form-btn" type="button" class="btn btn-secondary" value="Genera">
                 </div>
                 <div class="col">
 
